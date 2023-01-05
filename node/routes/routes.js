@@ -1,9 +1,22 @@
-import { Sequelize } from "sequelize";
+import express  from "express";
+import {
+  createBlog,
+  deleteBlog,
+  getAllBlogs,
+  getBlog,
+  updateBlog,
+} from "../controllers/BlogController.js";
 
-//database, where and password
-const db = new Sequelize("database_app", "root", "", {
-  host: "localhost",
-  dialect: "mysql",
-});
+const router = express.Router();
 
-export default db;
+router.get("/", getAllBlogs);
+
+router.get("/:id", getBlog);
+
+router.post("/", createBlog);
+
+router.put("/:id", updateBlog);
+
+router.delete("/:id", deleteBlog);
+
+export default router;

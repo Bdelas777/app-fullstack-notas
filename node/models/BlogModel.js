@@ -1,6 +1,6 @@
 // Forma sequelize.define
 // import db connection
-import db from "../database/db";
+import db from "../database/db.js";
 // Import sequelize
 import { DataTypes } from "sequelize"
 
