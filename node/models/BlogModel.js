@@ -9,4 +9,4 @@ const BlogModel = db.define("blogs",{
     content: {type: DataTypes.STRING},
 })
 
-export default
+export default BlogModel;
