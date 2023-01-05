@@ -43,34 +43,33 @@ export const createBlog = async (req, res) => {
 // Update
 
 export const updateBlog = async (req, res) => {
-    try {
-        await BlogModel.update(req.body,{
-            where: {
-              id: req.params.id,
-            },
-          });
-      res.json({
-        message: "Registro actualizado con exito ",
-      });
-    } catch (error) {
-      res.json({ message: error.message });
-    }
-  };
-
+  try {
+    await BlogModel.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.json({
+      message: "Registro actualizado con exito ",
+    });
+  } catch (error) {
+    res.json({ message: error.message });
+  }
+};
 
 // Delete
 
 export const deleteBlog = async (req, res) => {
-    try {
-        await BlogModel.destroy({
-            where: {
-              id: req.params.id,
-            },
-          });
-      res.json({
-        message: "Registro eliminado con exito ",
-      });
-    } catch (error) {
-      res.json({ message: error.message });
-    }
-  };
+  try {
+    await BlogModel.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.json({
+      message: "Registro eliminado con exito ",
+    });
+  } catch (error) {
+    res.json({ message: error.message });
+  }
+};
