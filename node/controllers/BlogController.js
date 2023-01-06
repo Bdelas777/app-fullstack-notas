@@ -21,7 +21,7 @@ export const getBlog = async (req, res) => {
         id: req.params.id,
       },
     });
-    res.json(blog);
+    res.json(blog[0]);
   } catch (error) {
     res.json({ message: error.message });
   }
