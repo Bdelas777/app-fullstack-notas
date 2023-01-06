@@ -30,7 +30,7 @@ const CompCreateBlog = () => {
                     />
                  </div>   
                  <div className='mb-3'>
-                     <label className='form-label'>Title</label>
+                     <label className='form-label'>Content</label>
                     <textarea
                         value={content}
                         onChange={ (e)=> setContent(e.target.value)} 
@@ -38,7 +38,7 @@ const CompCreateBlog = () => {
                         className='form-control'
                     />                 
                  </div>  
-                 <button type='submit' className='btn btn-primary'>Store</button>                  
+                 <button type='submit' className='btn btn-primary'>Crea</button>                  
            </form>
         </div>
     )
