@@ -1,8 +1,10 @@
+
+
 import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-const URI = 'http://localhost:8000/blogs//'
+const URI = 'http://localhost:8000/blogs/'
 
 const CompCreateBlog = () => {
     const [title, setTitle] = useState('')
@@ -12,16 +14,16 @@ const CompCreateBlog = () => {
     //procedimiento guardar
     const store = async (e) => {
         e.preventDefault()
-        await axios.post(URI, {title: title, content:content})
+        await axios.post(URI, {title, content})
         navigate('/')
     }   
 
     return (
         <div>
-           <h3>Create POST</h3>
+           <h3>Crea</h3>
            <form onSubmit={store}>
                 <div className='mb-3'>
-                    <label className='form-label'>Title</label>
+                    <label className='form-label'>Titulo</label>
                     <input
                         value={title}
                         onChange={ (e)=> setTitle(e.target.value)} 
@@ -30,7 +32,7 @@ const CompCreateBlog = () => {
                     />
                  </div>   
                  <div className='mb-3'>
-                     <label className='form-label'>Content</label>
+                     <label className='form-label'>Contenido</label>
                     <textarea
                         value={content}
                         onChange={ (e)=> setContent(e.target.value)} 

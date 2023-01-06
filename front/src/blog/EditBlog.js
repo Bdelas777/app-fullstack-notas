@@ -14,8 +14,8 @@ const CompEditBlog = () => {
     const update = async (e) => {
         e.preventDefault()
         await axios.put(URI+id, {
-            title: title,
-            content: content
+            title,
+            content
         })
         navigate('/')
     }
@@ -32,10 +32,10 @@ const CompEditBlog = () => {
 
     return (
         <div>
-        <h3>Edit POST</h3>
+        <h3>Edita</h3>
         <form onSubmit={update}>
             <div className="mb-3">
-                <label className="form-label">Title</label>
+                <label className="form-label">Titulo</label>
                 <input
                     value={title}
                     onChange={ (e)=> setTitle(e.target.value)}
@@ -44,7 +44,7 @@ const CompEditBlog = () => {
                 />
             </div>
             <div className="mb-3">
-                <label  className="form-label">Content</label>
+                <label  className="form-label">Contenido</label>
                 <textarea
                     value={content}
                     onChange={ (e)=> setContent(e.target.value)}
@@ -52,7 +52,7 @@ const CompEditBlog = () => {
                     className="form-control"
                 />
             </div>            
-            <button type="submit" className="btn btn-primary">Update</button>
+            <button type="submit" className="btn btn-primary">Actualiza</button>
         </form>
     </div>
     )
