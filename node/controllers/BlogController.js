@@ -1,3 +1,4 @@
+// Controller
 import BlogModel from "../models/BlogModel.js";
 
 // Crud Methods
